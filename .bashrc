@@ -112,7 +112,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# =-=-
+# PS1
+# =-=-
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -123,3 +125,9 @@ GREEN="\[\033[0;32m\]"
 NO_COLOR="\[\033[0m\]"
 
 PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
+
+# =-=-=-=
+# ssh-add
+# =-=-=-=
+eval `ssh-agent -s` >> /dev/null 2> /dev/null
+ssh-add >> /dev/null 2> /dev/null
