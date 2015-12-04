@@ -172,3 +172,7 @@ bindsym $mod+b exec "i3lock -i /home/vsouza/Pictures/wallpaper.png"
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
 bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
