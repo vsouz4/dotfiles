@@ -2,5 +2,6 @@
 !.gitignore
 !.bashrc
 !.vimrc
+!.tmux.conf
 !.i3/
 !.i3/*
