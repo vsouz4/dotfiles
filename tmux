@@ -1,6 +1,5 @@
 #!/bin/bash
 
-tmux
 tmux rename-window local-1
 tmux new-window
 tmux rename-window local-2
