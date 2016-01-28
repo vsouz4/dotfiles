@@ -14,6 +14,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'jakobwesthoff/whitespacetrail'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'joonty/vdebug'
+Bundle 'scrooloose/nerdtree'
 " plugins end
 
 call vundle#end()
@@ -54,3 +55,12 @@ colorscheme solarized
 " maps
 " =-=-=-=-=-=-=-=-=-=-
 map <C-b> :CtrlPBuffer<CR>
+
+
+:set completeopt=longest,menuone
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
