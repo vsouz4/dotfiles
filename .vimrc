@@ -43,7 +43,7 @@ set et
 set ruler
 set cursorline
 set laststatus=2
-set colorcolumn=121
+set colorcolumn=81
 set hlsearch
 set background=dark
 syntax enable
