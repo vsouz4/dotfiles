@@ -153,17 +153,6 @@ exec --no-startup-id feh --bg-scale '~/Pictures/wallpaper.png'
 # Rename workspaces
 bindsym $mod+x exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
-# start applications on i3 launch
-exec --no-startup-id "i3-msg 'workspace \"2:terminal\"; append_layout ~/.i3/workspace-2.json'"
-exec --no-startup-id i3-msg 'exec /usr/bin/gnome-terminal'
-
-exec --no-startup-id "i3-msg 'workspace \"3:gvim\"; append_layout ~/.i3/workspace-3.json'"
-exec --no-startup-id i3-msg 'exec /usr/bin/gvim'
-
-exec --no-startup-id "i3-msg 'workspace \"4:chrome\"; append_layout ~/.i3/workspace-4.json'"
-exec --no-startup-id i3-msg 'exec /usr/bin/google-chrome-stable'
-exec --no-startup-id i3-msg 'workspace number 4, focus, move workspace to output left, rename workspace to "1:chrome"'
-
 # move workspaces between monitors
 bindsym $mod+m move workspace to output left
 
