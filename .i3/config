@@ -147,9 +147,6 @@ bar {
         status_command i3status
 }
 
-# Background (needs 'sudo apt-get install feh' first)
-exec --no-startup-id feh --bg-scale '~/Pictures/wallpaper.png'
-
 # Rename workspaces
 bindsym $mod+x exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
@@ -173,3 +170,6 @@ bindsym Print exec gnome-screenshot --interactive
 
 # vertical containers
 bindsym $mod+v split v
+
+# Background (needs 'sudo apt-get install feh' first)
+exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/vsouza/Pictures/wallpaper.png'

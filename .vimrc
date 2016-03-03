@@ -15,6 +15,8 @@ Bundle 'jakobwesthoff/whitespacetrail'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'joonty/vdebug'
 Bundle 'scrooloose/nerdtree'
+Bundle 'nrocco/vim-phplint'
+Bundle 'vim-airline/vim-airline'
 " plugins end
 
 call vundle#end()
@@ -47,6 +49,8 @@ set laststatus=2
 set colorcolumn=81
 set hlsearch
 set background=dark
+set hidden
+set wildmenu
 syntax enable
 set term=xterm-256color
 colorscheme solarized
@@ -64,3 +68,5 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+noremap <C-l> :Phplint<CR></CR>
