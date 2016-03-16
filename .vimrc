@@ -53,6 +53,7 @@ set hidden
 set wildmenu
 syntax enable
 set term=xterm-256color
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " =-=-=-=-=-=-=-=-=-=-
