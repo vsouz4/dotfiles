@@ -6,3 +6,6 @@
 !.i3/
 !.i3/*
 !tmux
+!.config/
+!.config/terminator/
+!.config/terminator/config
