@@ -131,5 +131,3 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 # =-=-=-=
 eval `ssh-agent -s` >> /dev/null 2> /dev/null
 ssh-add >> /dev/null 2> /dev/null
-
-xset -dpms
