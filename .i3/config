@@ -147,8 +147,8 @@ bar {
         status_command i3status
 }
 
-# Background (needs 'sudo apt-get install feh' first)
-exec --no-startup-id feh --bg-scale '~/Pictures/wallpaper.png'
+# Background (needs 'sudo apt-get install nitrogen' first)
+exec --no-startup-id nitrogen --restore
 
 # VPN
 exec --no-startup-id nm-applet
