@@ -55,6 +55,7 @@ syntax enable
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
+let g:airline_powerline_fonts = 1
 
 " =-=-=-=-=-=-=-=-=-=-
 " maps
