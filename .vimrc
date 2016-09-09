@@ -17,6 +17,8 @@ Bundle 'joonty/vdebug'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nrocco/vim-phplint'
 Bundle 'vim-airline/vim-airline'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 " plugins end
 
 call vundle#end()
@@ -60,8 +62,7 @@ let g:airline_powerline_fonts = 1
 " =-=-=-=-=-=-=-=-=-=-
 " maps
 " =-=-=-=-=-=-=-=-=-=-
-map <C-b> :CtrlPBuffer<CR>
-
+nmap <C-b> :CtrlPBuffer<CR>
 
 :set completeopt=longest,menuone
 :inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -72,3 +73,8 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 noremap <C-l> :Phplint<CR></CR>
+
+map <C-\> :NERDTreeToggle<CR>
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
