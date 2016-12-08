@@ -17,6 +17,7 @@ Bundle 'joonty/vdebug'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nrocco/vim-phplint'
 Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 " plugins end
@@ -57,7 +58,9 @@ syntax enable
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
-let g:airline_powerline_fonts = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='dark'
 
 " =-=-=-=-=-=-=-=-=-=-
 " maps

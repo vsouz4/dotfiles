@@ -10,3 +10,4 @@
 !.config/terminator/
 !.config/terminator/config
 !.xsessionrc
+!.zshrc
