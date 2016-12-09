@@ -3,10 +3,11 @@
 [keybindings]
 [profiles]
   [[default]]
-    background_darkness = 0.9
-    background_image = None
-    background_type = transparent
     scrollbar_position = hidden
+    background_darkness = 0.9
+    background_type = transparent
+    background_image = None
+    show_titlebar = False
     scrollback_infinite = True
 [layouts]
   [[default]]

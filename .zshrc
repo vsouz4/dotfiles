@@ -85,3 +85,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 zstyle ':completion:*' special-dirs true
+source /home/vsouza/alias.zsh
+
+export EDITOR='vim'
+
+# =-=-=-=
+# ssh-add
+# =-=-=-=
+eval `ssh-agent -s` >> /dev/null 2> /dev/null
+ssh-add >> /dev/null 2> /dev/null
