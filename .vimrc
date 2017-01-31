@@ -20,6 +20,7 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+Bundle 'swekaj/php-foldexpr.vim'
 " plugins end
 
 call vundle#end()
