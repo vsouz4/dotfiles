@@ -1,0 +1,73 @@
+#!/bin/bash
+
+HOME=/home/vsouza
+DIR=$(pwd)
+cd /tmp/
+
+command_exists() {
+    command -v "$1" &> /dev/null ;
+}
+
+# installing google chrome
+printf "\n\ninstalling google chrome\n"
+if ! command_exists google-chrome-stable; then
+    sudo aptitude install -y libappindicator1
+    if [ ! -f google-chrome-stable_current_amd64.deb ]; then
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    fi
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+fi
+printf "done\n"
+
+# installing git
+printf "\n\ninstalling git\n"
+if ! command_exists git; then
+    sudo apt-get install -y git
+    git config --global user.name "Vitor de Souza"
+    git config --global user.email "vitor_souza@outlook.com"
+    git config --global push.default simple
+fi
+printf "done\n"
+
+# installing vim, gvim and related
+printf "\n\ninstalling vim and related\n"
+if ! command_exists vim; then
+    sudo apt-get -y install vim vim-gnome
+fi
+if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
+cd $HOME
+if [ ! -d $HOME/.git ]; then
+    git init
+    git remote add origin git@github.com:vsouz4/dotfiles.git
+fi
+git fetch origin
+git reset --hard origin/master
+
+vim +PluginInstall +qall
+
+# installing tmux and other bash stuff
+printf "\n\ninstalling tmux and other bash stuff"
+if ! command_exists zsh; then
+    sudo apt-get install -y terminator tmux zsh fonts-powerline
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    git reset --hard origin/master
+    touch alias.zsh
+fi
+
+# installing some extra stuff
+printf "\n\ninstalling some extra stuff\n"
+if ! command_exists xclip; then
+    sudo apt-get install -y xclip curl
+fi
+
+# installing i3
+printf "\n\ninstalling i3\n"
+if ! command_exists dmenu; then
+    sudo apt-get install -y i3 i3status dmenu i3lock xbacklight feh conky
+fi
+printf "done\n"
+
+# go back
+cd $DIR
