@@ -41,9 +41,9 @@ cd $HOME
 if [ ! -d $HOME/.git ]; then
     git init
     git remote add origin git@github.com:vsouz4/dotfiles.git
+    git fetch origin
+    git reset --hard origin/master
 fi
-git fetch origin
-git reset --hard origin/master
 
 vim +PluginInstall +qall
 
@@ -68,6 +68,26 @@ if ! command_exists dmenu; then
     sudo apt-get install -y i3 i3status dmenu i3lock xbacklight feh conky
 fi
 printf "done\n"
+
+# installing docker
+printf "\n\ninstalling docker\n"
+if ! command_exists docker; then
+    sudo apt-get install -y apt-transport-https ca-certificates software-properties-common
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+    sudo apt-get update
+    sudo apt-get install docker-ce
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo docker run hello-world
+fi
+if ! command_exists docker-compose; then
+    sudo apt-get install python-setuptools
+    sudo easy_install pip
+    sudo pip install docker-compose
+fi
+printf "done\n"
+
 
 # go back
 cd $DIR
