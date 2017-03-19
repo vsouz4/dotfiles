@@ -147,11 +147,11 @@ bar {
         status_command i3status
 }
 
-# Background (needs 'sudo apt-get install nitrogen' first)
-exec --no-startup-id nitrogen --restore
-
 # VPN
 exec --no-startup-id nm-applet
+
+# Touchpad
+exec_always --no-startup-id synclient TapButton1=1
 
 # Rename workspaces
 bindsym $mod+x exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
