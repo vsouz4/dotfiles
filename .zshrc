@@ -97,11 +97,19 @@ ssh-add >> /dev/null 2> /dev/null
 
 # For red cursor color
 zle-keymap-select () {
-    echo -ne "\033]12;#a82c30\007"
+    if [[ $TMUX = '' ]]; then
+        echo -ne "\033]12;#a82c30\007"
+#   else
+#       printf '\033Ptmux;\033\033]12;red\007\033\\'
+    fi
 }
 
 zle-line-init () {
-  echo -ne "\033]12;#a82c30\007"
+    if [[ $TMUX = '' ]]; then
+        echo -ne "\033]12;#a82c30\007"
+#   else
+#       printf '\033Ptmux;\033\033]12;red\007\033\\'
+    fi
 }
 zle -N zle-keymap-select
 zle -N zle-line-init
