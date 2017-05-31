@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="custom"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +45,7 @@ ZSH_THEME="agnoster"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.zsh_custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -94,3 +94,14 @@ export EDITOR='vim'
 # =-=-=-=
 eval `ssh-agent -s` >> /dev/null 2> /dev/null
 ssh-add >> /dev/null 2> /dev/null
+
+# For red cursor color
+zle-keymap-select () {
+    echo -ne "\033]12;#a82c30\007"
+}
+
+zle-line-init () {
+  echo -ne "\033]12;#a82c30\007"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init

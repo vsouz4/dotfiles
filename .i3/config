@@ -179,3 +179,5 @@ bindsym $mod+v split v
 
 # Background (needs 'sudo apt-get install feh' first)
 exec_always --no-startup-id /usr/bin/feh --bg-scale '/home/vsouza/wallpaper.png'
+
+new_window 1pixel

@@ -52,7 +52,8 @@ set cursorline
 set laststatus=2
 set colorcolumn=81
 set hlsearch
-set background=dark
+"set background=dark
+set background=light
 set hidden
 set wildmenu
 syntax enable
@@ -82,3 +83,12 @@ map <C-\> :NERDTreeToggle<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
+
+" cursor color
+if &term =~ "xterm\\|rxvt"
+  let &t_SI = "\<Esc>]12;orange\x7"
+  let &t_EI = "\<Esc>]12;orange\x7"
+  silent !echo -ne "\033]12;orange\007"
+endif
+highlight Cursor guifg=white guibg=orange
+highlight iCursor guifg=white guibg=orange
