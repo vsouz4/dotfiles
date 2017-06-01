@@ -9,7 +9,7 @@
     background_image = None
     foreground_color = "#636968"
     show_titlebar = False
-    font = Meslo LG L DZ for Powerline 10
+    font = Droid Sans Mono 10
     background_color = "#ffffd9"
     scrollback_infinite = True
 [layouts]
