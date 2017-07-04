@@ -47,6 +47,12 @@ fi
 
 vim +PluginInstall +qall
 
+# custom vim snippets
+printf "\n\ninstalling custom vim snippets"
+if [ ! -d $HOME/.vim/UltiSnips ]; then
+    git clone git@github.com:vsouz4/vim-snippets.git $HOME/.vim/UltiSnips
+fi
+
 # installing tmux and other bash stuff
 printf "\n\ninstalling tmux and other bash stuff"
 if ! command_exists zsh; then
