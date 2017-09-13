@@ -65,6 +65,16 @@ let g:airline_right_sep=''
 let g:airline_theme='dark'
 
 " =-=-=-=-=-=-=-=-=-=-
+" VDebug
+" =-=-=-=-=-=-=-=-=-=-
+let g:vdebug_options = {
+    \   'port' : 9000,
+    \   'path_maps': {
+    \       '/var/www/': '/shop/dftech/'
+    \   }
+    \}
+
+" =-=-=-=-=-=-=-=-=-=-
 " maps
 " =-=-=-=-=-=-=-=-=-=-
 nmap <C-b> :CtrlPBuffer<CR>
