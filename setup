@@ -65,7 +65,7 @@ fi
 # installing some extra stuff
 printf "\n\ninstalling some extra stuff\n"
 if ! command_exists xclip; then
-    sudo apt-get install -y xclip curl
+    sudo apt-get install -y xclip curl build-essential fonts-font-awesome
 fi
 
 # installing i3
@@ -94,6 +94,14 @@ if ! command_exists docker-compose; then
 fi
 printf "done\n"
 
+# configuring i3blocks
+if ! command_exists i3blocks; then
+    cd /tmp/
+    git clone git://github.com/vivien/i3blocks
+    cd i3blocks
+    make clean debug
+    sudo make install
+fi
 
 # go back
 cd $DIR
