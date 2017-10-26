@@ -10,6 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $bgcolor #e3e4e6
+set $color #777777
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -84,24 +86,24 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace (changed workspace 1 to workspace number 1, for example, for named workspaces)
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
+bindsym $mod+1 workspace 
+bindsym $mod+2 workspace 
+bindsym $mod+3 workspace 
+bindsym $mod+4 workspace 
+bindsym $mod+5 workspace 
+bindsym $mod+6 workspace 
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # move focused container to workspace (same as above, changed with number)
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+1 move container to workspace 
+bindsym $mod+Shift+2 move container to workspace 
+bindsym $mod+Shift+3 move container to workspace 
+bindsym $mod+Shift+4 move container to workspace 
+bindsym $mod+Shift+5 move container to workspace 
+bindsym $mod+Shift+6 move container to workspace 
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
@@ -141,10 +143,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3 status bar
 bar {
-        status_command i3status
+    status_command i3blocks
+    colors {
+        background $bgcolor
+        statusline $color
+		focused_workspace $bgcolor $bgcolor #73b5de
+        active_workspace $bgcolor $bgcolor $color
+		inactive_workspace $bgcolor $bgcolor $color
+		urgent_workspace $bgcolor $bgcolor $color
+    }
 }
 
 # VPN

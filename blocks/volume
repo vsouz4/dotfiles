@@ -1,0 +1,12 @@
+#!/bin/bash
+
+OFF=$(amixer get Master | grep '\[off\]'|wc -l)
+
+if [ "$OFF" -gt 0 ];
+    then
+        echo "";
+    else
+        VOLUME=$(amixer get Master|grep '%'|cut -f2 -d'['|cut -f1 -d']'|head -n1)
+        echo "   $VOLUME"
+fi
+

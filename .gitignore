@@ -2,9 +2,12 @@
 !.gitignore
 !.bashrc
 !.vimrc
+!.i3blocks.conf
 !.tmux.conf
 !.i3/
 !.i3/*
+!blocks/
+!blocks/*
 !tmux
 !.config/
 !.config/terminator/
