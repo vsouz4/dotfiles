@@ -6,8 +6,8 @@
 !.tmux.conf
 !.i3/
 !.i3/*
-!blocks/
-!blocks/*
+!.i3/blocks/
+!.i3/blocks/*
 !tmux
 !.config/
 !.config/terminator/
