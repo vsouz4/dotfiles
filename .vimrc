@@ -63,6 +63,7 @@ colorscheme solarized
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_theme='dark'
+set guifont=Menlo:h15
 
 " =-=-=-=-=-=-=-=-=-=-
 " VDebug
