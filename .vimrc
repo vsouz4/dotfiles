@@ -20,7 +20,6 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
-Bundle 'swekaj/php-foldexpr.vim'
 " plugins end
 
 call vundle#end()
@@ -57,6 +56,7 @@ set background=light
 set hidden
 set wildmenu
 syntax enable
+set nowrap
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -103,3 +103,8 @@ if &term =~ "xterm\\|rxvt"
 endif
 highlight Cursor guifg=white guibg=orange
 highlight iCursor guifg=white guibg=orange
+
+" Tabs and Files
+autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
+autocmd FileType make set tabstop=4|set shiftwidth=4|set expandtab
