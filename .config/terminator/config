@@ -1,23 +1,22 @@
 [global_config]
   suppress_multiple_term_dialog = True
 [keybindings]
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.9
-    background_image = None
-    foreground_color = "#636968"
-    show_titlebar = False
-    font = Droid Sans Mono 10
-    background_color = "#ffffd9"
-    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#ffffd9"
+    background_darkness = 0.9
+    cursor_color = "#636968"
+    font = Droid Sans Mono 10
+    foreground_color = "#636968"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
