@@ -51,8 +51,8 @@ set cursorline
 set laststatus=2
 set colorcolumn=81
 set hlsearch
-"set background=dark
-set background=light
+set background=dark
+"set background=light
 set hidden
 set wildmenu
 syntax enable
