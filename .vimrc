@@ -13,7 +13,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
 Bundle 'jakobwesthoff/whitespacetrail'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'joonty/vdebug'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nrocco/vim-phplint'
 Bundle 'vim-airline/vim-airline'
@@ -56,7 +55,6 @@ set background=dark
 set hidden
 set wildmenu
 syntax enable
-set nowrap
 set term=xterm-256color
 let g:solarized_termcolors=256
 colorscheme solarized
