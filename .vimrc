@@ -19,6 +19,9 @@ Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
+Bundle 'phpactor/phpactor'
+Bundle 'Shougo/deoplete.nvim'
+Bundle 'kristijanhusak/deoplete-phpactor'
 " plugins end
 
 call vundle#end()
@@ -64,16 +67,6 @@ let g:airline_theme='dark'
 set guifont=Menlo:h15
 
 " =-=-=-=-=-=-=-=-=-=-
-" VDebug
-" =-=-=-=-=-=-=-=-=-=-
-let g:vdebug_options = {
-    \   'port' : 9000,
-    \   'path_maps': {
-    \       '/var/www/': '/shop/dftech/'
-    \   }
-    \}
-
-" =-=-=-=-=-=-=-=-=-=-
 " maps
 " =-=-=-=-=-=-=-=-=-=-
 nmap <C-b> :CtrlPBuffer<CR>
@@ -89,6 +82,11 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 noremap <C-l> :Phplint<CR></CR>
 
 map <C-\> :NERDTreeToggle<CR>
+
+"nmap <C-i> :call phpactor#UseAdd()<CR>
+"nmap <C-g> :call phpactor#GotoDefinition()<CR>
+
+autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
