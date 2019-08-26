@@ -43,6 +43,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 set noswapfile
 set encoding=utf-8
 set nu
+set relativenumber
 set ai
 set ts=4
 set sw=4
@@ -51,7 +52,7 @@ set et
 set ruler
 set cursorline
 set laststatus=2
-set colorcolumn=81
+set colorcolumn=121
 set hlsearch
 set background=dark
 "set background=light
@@ -104,3 +105,5 @@ highlight iCursor guifg=white guibg=orange
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType make set tabstop=4|set shiftwidth=4|set expandtab
+
+autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
