@@ -111,6 +111,7 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+bindkey '\e.' insert-last-word
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
