@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
@@ -15,8 +15,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'adoy/vim-php-refactoring-toolbox'
-Plug 'ap/vim-css-color'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'SirVer/ultisnips'
+Plug 'elzr/vim-json'
 
 call plug#end()
 
@@ -27,6 +27,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set autoindent
 set cursorline
 set hidden
 set nobackup
@@ -37,8 +38,15 @@ autocmd FileType yaml set tabstop=2|set shiftwidth=2
 let g:airline_theme='gruvbox'
 colorscheme gruvbox
 
+let g:UltiSnipsSnippetDirectories = ['/Users/vsouz4/.config/nvim/ultisnips']
+
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinSize = 60
+
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <C-f> :Ag<CR>
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%'), <bang>0)
 
 " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
