@@ -1,0 +1,187 @@
+global !p
+import vim
+endglobal
+
+snippet class "Class declaration template" b
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+class ${2:`!p snip.rv=snip.basename`}
+{
+    ${3:}
+}
+endsnippet
+
+snippet getter "Getter" b
+public function get${1/\w+\s*/\u$0/}(): ${2:return}
+{
+    return $this->${1:prop};
+}
+endsnippet
+
+snippet has "Has" b
+public function has${1/\w+\s*/\u$0/}(): bool
+{
+    return $this->${1:prop} !== null;
+}
+endsnippet
+
+snippet setter "Setter" b
+public function set${1/\w+\s*/\u$0/}(${2:type} $$1): self
+{
+    $this->${1} = $$1;
+
+	return $this;
+}
+endsnippet
+
+snippet with "With" b
+public function with${1/\w+\s*/\u$0/}(${2:type} $$1): self
+{
+	$instance = clone $this;
+
+    $instance->${1} = $$1;
+
+	return $instance;
+}
+endsnippet
+
+snippet interface "Interface declaration template" b
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+interface ${2:`!p snip.rv=snip.basename`}
+{
+    ${3:}
+}
+endsnippet
+
+snippet trait "Trait declaration template" b
+<?php
+
+declare(strict_types=1);
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+trait ${2:`!p snip.rv=snip.basename`}
+{
+    ${3:}
+}
+endsnippet
+
+snippet construct "PHP Class constructor" b
+public function __construct($1)
+{
+	$2
+}
+endsnippet
+
+snippet pub "Public function" b
+public function ${1:name}(${2:$dependencies}): $3
+{
+	${VISUAL}${4:return null;}
+}
+endsnippet
+
+snippet pro "Protected function" b
+protected function ${1:name}(${2:$dependencies}): $3
+{
+	${VISUAL}${4:return null;}
+}
+endsnippet
+
+snippet pri "Private function" b
+private function ${1:name}(${2:$dependencies}): $3
+{
+	${VISUAL}${4:return null;}
+}
+endsnippet
+
+snippet doc "Document variable" b
+/** @var ${1:type} $${2:var} */
+endsnippet
+
+snippet inherit "Inherit Doc" b
+/** {@inheritdoc} */
+endsnippet
+
+# PHPUNIT
+
+snippet ugetset "Get set test" b
+public function test_get_set${1/\w+\s*/\u$0/}()`!p snip.rv = ': '+t[2]`
+{
+    $$1 = $this->createMock('${2:class}');
+
+    static::assertSame(
+        $this->${3:var},
+        $this->$3->set${1/\w+\s*/\u$0/}($expected)
+    );
+    static::assertSame($$1, $this->$3->get${1/\w+\s*/\u$0/}());
+}
+endsnippet
+
+snippet mock "Get mock" b
+$${1:var} = $this->createMock(${2:class}::class);
+endsnippet
+
+snippet once "expects once" b
+$${1:var}
+    ->expects(static::once())
+    ->method('${2:method}')
+    ->with(${3:with})
+    ->willReturn(${4:return});
+endsnippet
+
+snippet case "test case" b
+public function test${1:}(): void
+{
+    ${2:}
+}
+endsnippet
+
+snippet test "test class" b
+<?php
+
+declare(strict_types=1);
+
+namespace ${3:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+use PHPUnit\Framework\TestCase;
+
+class ${2:`!p snip.rv=snip.basename`} extends TestCase
+{
+    /** @var ${2/Test//} */
+    private $$1;
+
+    public function setUp(): void
+    {
+        $this->${1:} = new ${2/Test//}();
+    }
+}
+endsnippet
